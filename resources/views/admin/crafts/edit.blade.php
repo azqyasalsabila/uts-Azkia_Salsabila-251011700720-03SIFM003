@@ -188,11 +188,13 @@
             <label>Foto Saat Ini</label>
 
             @if ($craft->image && \Illuminate\Support\Facades\Storage::disk('public')->exists($craft->image))
-                <img
-                    class="current-image"
-                    src="{{ asset('storage/' . $craft->image) }}"
-                    alt="{{ $craft->name }}"
-                >
+                
+            <img
+                class="current-image"
+                src="{{ asset('assets/images/' . $craft->image) }}"
+                alt="{{ $craft->name }}"
+            >
+
             @else
                 <p class="hint">Belum ada foto tersimpan melalui fitur upload.</p>
             @endif

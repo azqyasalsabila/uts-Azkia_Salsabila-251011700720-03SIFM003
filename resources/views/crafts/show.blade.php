@@ -111,16 +111,15 @@
 @endpush
 
 @section('navbar')
+
 <nav class="navbar navbar-expand-lg bg-white shadow-sm">
     <div class="container">
         <a class="navbar-brand fw-bold" href="{{ route('crafts.index') }}">
             ← RuangKarya
         </a>
-        <a class="nav-link" href="{{ route('admin.crafts.index') }}">
-            Kelola Produk
-        </a>
     </div>
 </nav>
+
 @endsection
 
 @section('content')
@@ -128,10 +127,13 @@
     <div class="detail">
         <div class="product-image-box">
             @if ($craft->image && \Illuminate\Support\Facades\Storage::disk('public')->exists($craft->image))
+                
                 <img
-                    src="{{ asset('storage/' . $craft->image) }}"
+                    src="{{ asset('assets/images/' . $craft->image) }}"
                     alt="{{ $craft->name }}"
+                    class="img-fluid rounded"
                 >
+
             @elseif ($craft->image && file_exists(public_path('assets/images/' . $craft->image)))
                 <img
                     src="{{ asset('assets/images/' . $craft->image) }}"

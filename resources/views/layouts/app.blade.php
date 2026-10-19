@@ -6,7 +6,8 @@
 
     <title>@yield('title', 'RuangKarya | Marketplace Kerajinan')</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap lokal -->
+    <link rel="stylesheet" href="{{ asset('Bootstrap/css/bootstrap.min.css') }}">
 
     @stack('styles')
 </head>
@@ -19,6 +20,9 @@
     </main>
 
     @yield('footer')
+
+    <!-- Bootstrap JS lokal -->
+    <script src="{{ asset('Bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
     @stack('scripts')
 </body>

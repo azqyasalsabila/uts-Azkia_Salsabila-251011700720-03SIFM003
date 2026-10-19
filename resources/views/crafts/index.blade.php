@@ -206,13 +206,13 @@
 </head>
 
 <body>
+    
     <nav>
-    <div class="logo">RuangKarya.</div>
-    <div>
-        <a href="{{ route('crafts.index') }}">Beranda</a>
-        <a href="#produk">Produk</a>
-        <a href="{{ route('admin.crafts.index') }}">Kelola Produk</a>
-    </div>
+        <div class="logo">RuangKarya.</div>
+        <div>
+            <a href="{{ route('crafts.index') }}">Beranda</a>
+            <a href="#produk">Produk</a>
+        </div>
     </nav>
     <section class="hero">
         <h1>Karya Lokal, Cerita Istimewa.</h1>
@@ -243,10 +243,13 @@
 
                     <div class="product-image">
                         @if ($craft->image && \Illuminate\Support\Facades\Storage::disk('public')->exists($craft->image))
+                            
                             <img
-                                src="{{ asset('storage/' . $craft->image) }}"
+                                src="{{ asset('assets/images/' . $craft->image) }}"
                                 alt="{{ $craft->name }}"
+                                class="card-img-top"
                             >
+
                         @elseif (str_contains(strtolower($craft->category), 'aksesoris'))
                             👜
                         @else
